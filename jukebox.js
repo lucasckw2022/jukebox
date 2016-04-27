@@ -29,6 +29,12 @@ var button_clicked = function()
   if($("input[type=text]").prop("hidden")==true){
     $("input[type=text]").prop("hidden",false);
   }else{
+    if($("input[type=text]").val()==""){
+      $('.error').remove();
+      $('h1').after("<p class='error' style='color:red'>Please input the note you would like to play!</p>")
+    } else {
+      $('.error').remove();
     playSong(notes,bpm);
+    }
   }
 }
